@@ -19,7 +19,7 @@ if is_32bits:
 system = platform.system()
 arch = platform.machine()
 
-LOAD_LIB=""
+LOAD_LIB="libfaupl.so"
 
 if system == "Linux":
         LOAD_LIB=rundir + "/Linux/x86_64/libfaupl.so"
