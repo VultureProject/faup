@@ -30,5 +30,8 @@ if system == "Darwin":
                 LOAD_LIB=rundir + "/Darwin/x86_64/libfaupl.dylib"
 
 #print(LOAD_LIB)
-        
-bind.library = cdll.LoadLibrary(LOAD_LIB)
+
+try:
+        bind.library = cdll.LoadLibrary(LOAD_LIB)
+except OSError:
+        raise ImportError("Could not find faup system library, please install it with your package manager")
